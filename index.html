@@ -61,7 +61,7 @@
 <section class="slide">
     <h2><span>Кто я</span></h2>
     <ol>
-        <li>10+ лет в вебе. Прошел путь fullstack, teamlead</li>
+        <li>10+ лет в IT (web). Прошел путь fullstack, teamlead</li>
         <li>Пишу на PHP, Typescript, Nodejs (Nest) и React</li>
         <li>Организатор Ростовского PHP сообщества (300+ человек)</li>
         <li>Влюблен в Linux, OpenSource.</li>
@@ -81,874 +81,412 @@
 
 
 <section class="slide">
-    <h2><span>Docs as code</span></h2>
+    <h2><span>План доклада</span></h2>
     <ol>
-        <li>Варианты knowledgeBase</li>
-        <li>В чем смысл подхода</li>
-        <li>Преимущества</li>
-        <li>Как это работает на примере docusaurus</li>
-        <li>Недостатки</li>
-
+        <li class="next">Что такое docs as code</li>
+        <li class="next">Как мы к этому пришли</li>
+        <li class="next">Основные плюсы и минусы подхода</li>
+        <li class="next">Сравниваем с confluence</li>
+        <li class="next">Выводы</li>
     </ol>
 
-    <div class="logo"></div>
-</section>
-
-
-
-<section class="slide">
-    <h2><span>Docs as code</span></h2>
-    <ol>
-        <li>Варианты knowledgeBase</li>
-        <li>В чем смысл подхода</li>
-        <li>Преимущества</li>
-        <li>Как это работает на примере docusaurus</li>
-        <li>Недостатки</li>
-
-    </ol>
-
-    <div class="logo"></div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section class="slide ">
-    <h2><span>Вопросы в зал</span></h2>
-    <ul>
-        <li>Кто из вас реализовывал аутентификацию в SPA приложениях?
-        <li class="next">Кто делал stateless авторизацию на JWT токенах?</li>
-        <li class="next">Кто читал OWASP рекомендации (или RFC 8725 JSON Web Token Best Current Practices) как сделать это безопасно?</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2><span>Проблемы первого раза для stateless авторизации в SPA</span></h2>
-    <ul>
-        <li class="next">Масса статей которые очень поверхностно разбирают лишь самые базовые аспекты</li>
-        <li class="next">Отсутствие популярных проверенных и удобных библиотек инкапсулирующих сложность</li>
-        <li class="next">Отсутствие знаний по грамотной эксплуатации и защите токенов</li>
-        <li class="next">Наваяет как скажет бекендер, который на поверку не всегда может быть грамотен</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-
-    <h2 class="shout fs50" style="text-align: left; margin: 0 0 0 50px"><span class="gray">Идеальный вариант:</span><br><br>Стандарт, а еще лучше библиотека который инкапсулировала бы всю экспертизу<br>за легким интерфейсом</h2>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2><span>Что побудило сделать доклад</span></h2>
-    <ol>
-        <li>Я не нашел единого источника информации который бы охватил все аспекты построения безопасной авторизации на JWT токенах для SPA приложений</li>
-        <li>Я не нашел библиотеки которая всецело бы удовлетворяла потребности фронтендера и инкапсулировала всю сложность</li>
-    </ol>
-    <div class="logo"></div>
-</section>
-
-<!--<section class="slide ">-->
-<!--    <h2><span>Об этом докладе</span></h2>-->
-<!--    <ol>-->
-<!--        <li>В докладе будут затрагиваться местами и бекенд часть</li>-->
-<!--        <li>Доклад будет пол</li>-->
-<!--    </ol>-->
-<!--    <div class="logo"></div>-->
-<!--</section>-->
-
-<section class="slide ">
-    <h2><span>Как мы пришли к вопросу</span></h2>
-    <ul>
-        <li>Мы создаем приложений и сайты для корпораций</li>
-        <li class="next">В 18 году у нас стало больше MSA/SOA/Гибрид решений и SPA приложений</li>
-        <li class="next">Начали переосмысливать подходы к авторизации, начали делать первые приложения на JWT токенах</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2 class="shout shrink fs70">Немного теории</h2>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2 class=" shrink ">Терминология</h2>
-    <ul>
-        <li><b>Аутентификация</b> — процедура проверки подлинности, доказательство, что пользователь именно тот, за кого себя выдает.</li>
-        <li><b>Авторизация</b> — предоставление определённых прав.
-        </li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-
-<section class="slide ">
-    <h2>Основны способы аутентификации<br>в веб приложениях</h2>
-    <p>С технической точки зрения.</p>
-    <ol>
-        <li>Session</li>
-        <li>JWT Токены</li>
-        <li class="">OAuth 2.0 / OIDC</li>
-        <li class="">AD/LDAP федерации (в т.ч. NTLM/Kerberos)</li>
-        <li class="">Basic Http</li>
-    </ol>
-    <div class="logo"></div>
-</section>
-<section class="slide ">
-    <h2>Основны способы аутентификации<br>в веб приложениях</h2>
-    <p>С технической точки зрения.</p>
-    <ol>
-        <li>
-            <mark>Session</mark>
-        </li>
-        <li>
-            <mark>JWT Токены</mark>
-        </li>
-        <li class="gray">OAuth 2.0 / OIDC</li>
-        <li class="gray">AD/LDAP федерации (в т.ч. NTLM/Kerberos)</li>
-        <li class="gray">Basic Http</li>
-    </ol>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2 class="shout shrink fs60">Почему не рассматриваем OIDC/OAuth?</h2>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2 class="shout shrink fs70">OIDC/OAuth + Gatekeeper = ❤</h2>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2 class="shout shrink fs70">Stateless (JWT)<br>vs<br>Stateful (session) </h2>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2>Stateful (session) аутентификация</h2>
-    <p>Классическая аутентификация в монолитных приложениях</p>
-    <img width="400" style="float: right" src="pictures/session-auth.svg" alt="">
-    <ul class="clear-list next">
-        <li><i class="plus"></i> Простота</li>
-        <li><i class="plus"></i> Проще обеспечить безопасность</li>
-        <li><i class="minus"></i> Скорость</li>
-        <li><i class="minus"></i> Масштабирование</li>
-        <li><i class="minus"></i> Плохо подходит SOA/MSA</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2>Stateless (JWT)</h2>
-    <img style="float: right" src="pictures/jwt-auth.svg" alt="">
-    <ul class="clear-list">
-        <li><i class="plus"></i> Масштабирование</li>
-        <li><i class="plus"></i> Скорость</li>
-        <li><i class="minus"></i> Сложнее обеспечить безопасность</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2>JWT</h2>
-    <img width="630" src="pictures/jwt-basic.png" alt="">
-
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2>Где разместить аутентификацию?</h2>
-    <ol>
-        <li>Корпоративный SSO на базе Keycloak или OryStack.</li>
-        <li>Аутентификация на стороне бекенда</li>
-        <li>Аутентификация и авторизация на фронтенд-сервисе</li>
-    </ol>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2><span class="gray">Подходы:</span> корпоративный SSO Keycloak/Ory</h2>
-    <img class="width-wrap" width="800" style="margin-bottom: 20px;" src="pictures/keycloak.png" alt="">
-    <div class="logo"></div>
-</section>
-
-
-<section class="slide ">
-    <h2><span class="gray">Подходы:</span> корпоративный SSO Keycloak/Ory</h2>
-    <img class="width-wrap" width="560" style="margin-bottom: 20px;" src="pictures/gatekeeper2.svg" alt="">
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2><span class="gray">Подходы:</span> корпоративный SSO Keycloak/Ory</h2>
-    <ul class="clear-list">
-        <li><i class="plus"></i> Забирает почти всю боль с приложений бекенда и фронтенда</li>
-        <li class="next"><i class="plus"></i> Рекомендации по безопасности из коробки</li>
-        <li class="next"><i class="plus"></i> Нет дублирования кода авторизации в каждом микросервисе</li>
-        <li class="next"><i class="plus"></i> Stateless, JWT</li>
-        <li class="next"><i class="minus"></i> Доп узел, который нужно мониторить, поддерживать, обновлять, обслуживать</li>
-        <!--        <li class="next"><i class="minus"></i> Может возникнуть кейс с необходимостью управления разделяемой (общей) базой между сервисами</li>-->
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2><span class="gray">Подходы:</span> аутентификация на бекенде</h2>
-    <img class="width-wrap " width="800" style="margin-top: 30px;" src="pictures/auth-in-back.svg" alt="">
     <div class="logo"></div>
 </section>
 
 
 <section class="slide">
-    <h2><span class="gray">Подходы:</span> аутентификация на бекенде</h2>
-    <ul class="clear-list">
-        <li><i class="plus"></i> За хранение и обработку пользователей отвечает 1 сервис</li>
-        <li class="next"><i class="plus"></i> Stateless JWT, хотя можно и statefull бахнуть</li>
-        <li class="next"><i class="minus"></i> Фронтенд писать полностью самому. На бекенде есть готовые решения.</li>
-    </ul>
+    <h2><span>В чем вы пишете документацию?</span></h2>
+    <ol>
+        <li class="next">confluence</li>
+        <li class="next">google docs / word</li>
+        <li class="next">notion</li>
+        <li class="next">docs as code</li>
+        <li class="next">other</li>
+    </ol>
+
     <div class="logo"></div>
 </section>
 
 
 <section class="slide ">
-    <h2><span class="gray">Подходы:</span> аутентификация и хранение пользователей на фронтенд-сервисе</h2>
-    <img class="width-wrap " width="600" style="margin-top: 20px;" src="pictures/auth-in-front.svg" alt="">
+    <h2 class="shout shrink fs70">Кто слышал <br>о <b>DOCS-AS-CODE</b> подходе?</h2>
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <h2 class="shout shrink fs70">А кто пробовал?</h2>
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <p style="font-size: 35px;">Использовать подход <b>документации как код</b>, это значит применять к документации все
+        те же
+        <strong>правила, инструменты и процедуры</strong>, что и к <u>программному коду</u>, например:</p>
+
+    <ul style="font-size: 30px;">
+        <li>хранить в репозитории</li>
+        <li>прогонять тесты</li>
+        <li>собирать</li>
+        <li>релизить в CI/CD</li>
+    </ul>
     <div class="logo"></div>
 </section>
 
 
 <section class="slide">
-    <h2><span class="gray">Подходы:</span> аутентификация и хранение пользователей на фронтенд-сервисе</h2>
-    <ul class="clear-list">
-        <li><i class="plus"></i> За хранение и обработку пользователей отвечает 1 сервис</li>
-        <li class="next"><i class="minus"></i> Подойдет ограниченному количеству сервисов</li>
-    </ul>
-
-    <p class="next">Next auth предлагает такую схему из коробки как один из вариантов.</p>
+    <h2 class="shout"><span>Как мы к этому пришли</span></h2>
     <div class="logo"></div>
 </section>
 
-<section class="slide ">
-    <h2 class="">Разберем очень частый случай <br>для типового SPA приложения</h2>
+<section class="slide">
+    <h2 class=""><span>Особенности работы с крупным аутсорсом</span></h2>
     <ul>
-        <li>Аутентификация на бекенде</li>
-        <li>Бекенд отдает REST API + JWT токен</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2 class="shout shrink fs70">Какие вопросы перед нами встают?</h2>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2 class="">Где хранить JWT токен?</h2>
-    <ol>
-        <li class="next">В local storage?<span class="next"><br>Нежелательно. Если многодоменная конфигурация то можно по рекомендациям OWASP использовать SessionStorage + fingerprint.</span></li>
-        <li class="next">В cookie HttpOnly</li>
-    </ol>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2 class="">Как читать данные с токена?</h2>
-    <ol>
-        <li class="next">Локальное хранение
+        <li class="next">Крупные проекты мигрируют между крупными игроками (тендеры)</li>
+        <li class="next">Уровень отношения к документации разный:
             <ul>
-                <li>Просто читаем данные с токена который хранится? <span class="next red">плохо</span></li>
-                <li class="next">А если токен зашифрован? <span class="green">(Рекомендация OWASP)</span></li>
+                <li class="next">Документации нет</li>
+                <li class="next">Документация передается вордовским файлом</li>
+                <li class="next">В лучшем случае бекап конфлюенса</li>
             </ul>
         </li>
-        <li class="next">cookie http_only:<br>=> делаем запрос на сервер при загрузке страницы <span class="green">(best practices)</span></li>
-    </ol>
-
-    <footer class="footer">
-        Реструктурировать слайд
-    </footer>
+        <li class="next">Даже если есть - почти всегда отрывочная, неполная</li>
+    </ul>
     <div class="logo"></div>
 </section>
 
-<section class="slide ">
-    <h2 class="">Сколько должен жить JWT токен?</h2>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2 class="">А как его обновлять?</h2>
-    <h2 class=""><span class="gray">Refresh token</span></h2>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2 class="">Где хранить Refresh token?</h2>
-    <h2 class=""><span class="gray">cookie http_only / local storage</span></h2>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2 class="">Сколько хранить Refresh token?</h2>
-
-    <h2 class=""><span class="gray">От нескольких часов, до нескольких недель</span></h2>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2>Механика обновления access token</h2>
+<section class="slide">
+    <h2><span> Путь</span></h2>
     <ol>
-        <li class="next">cookie http_only: происходит фоном на бекенде</li>
-        <li class="next">локальное хранение: response interceptor клиента на 401, с перезапросом</li>
+        <li class="next">Были простые вики (2 вида) с wysiwyg редактором</li>
+        <li class="next">Техлиды и разработчики системно не любили в них ходить</li>
+        <li class="next">"документация должна лежать как можно ближе к коду"</li>
+        <li class="next">Начинали с простого markdown в репозитории проектов</li>
+        <li class="next">Со временем доросли до статических генераторов (mkdocs)</li>
+        <li class="next">Переехали на facebook docusaurus</li>
+        <li class="next">В некоторых проектах начали выносить в отдельные репозитории</li>
+        <li class="next">Построили внутреннюю документацию всей компании на docusaurus</li>
     </ol>
     <div class="logo"></div>
 </section>
 
 
-<section class="slide ">
-    <h2>Механика обновления access token</h2>
-    <table>
-        <tr style="vertical-align: top">
-            <td>
-                 <pre style="font-size: 5px;"><code>
-import { ErrorHandler, Injectable } from "@angular/core"
-import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http"
-
-import { catchError, switchMap, take, tap } from "rxjs/operators"
-import { BrowserStorageService } from "../shared-services/browser-storage.service"
-import { BrowserStorageVariables } from "../model"
-import { Observable, of, Subject, throwError } from "rxjs"
-import { Store } from "@ngrx/store"
-import { RootState } from "../../../web-navigator/app/core/model"
-import { authPath } from "../constants"
-import { AuthService } from "../../../web-navigator/app/auth/services/auth.service"
-import * as fromActions from "../../../web-navigator/app/core/actions"
-
-@Injectable()
-export class AuthInterceptor implements HttpInterceptor {
-    constructor(private browserStorage: BrowserStorageService,
-                private errorHandler: ErrorHandler,
-                private store$: Store<RootState>,
-                private authService: AuthService) {
-    }
-
-    /**
-     * Флаг говорящий о том что запрос на получение нового access токена в процессе
-     */
-    private isGetAccessTokenGetInProgress: boolean = false
-
-    /**
-     * Уведомитель, который сообщает что получен новый access токен
-     */
-    private accessToken$: Subject<void> = new Subject<void>()
-
-    public intercept(req: HttpRequest<any>, next: HttpHandler): Observable<any> {
-        return this.getRequest(req, next).pipe(
-            catchError((error: HttpErrorResponse) => {
-                if (error.url === null) {
-                    return throwError(error)
-                }
-
-                if (error.url.includes(authPath)) {
-                    this.isGetAccessTokenGetInProgress = false
-                    this.store$.dispatch(fromActions.destroyApp())
-                    return of(null)
-                }
-
-</code></pre>
-            </td>
-            <td>
-                 <pre style="font-size: 5px;"><code>
-/**
- * Если код ошибки не 401, значить что-то не так,
- * никак не связанное с авторизацией.
- * Просто прокидываем ошибку дальше
- */
-if (error.status !== 401) {
-    this.errorHandler.handleError(error)
-    return throwError(error)
-}
-
-/**
- * Если получение нового access в процессе,
- * то кидаем пришедший запрос в очередь ожидания
- */
-if (this.isGetAccessTokenGetInProgress) {
-    return this.accessToken$.pipe(
-        take(1),
-        switchMap(() => this.getRequest(req, next))
-    )
-}
-
-/**
- * Если код добрался сюда, пройдя все проверки,
- * то это означает что именно на этом запросе сгорел access токен,
- * так что мы говорим что получение в процессе и идем на сервер
- * авторизации за новым
- */
-this.isGetAccessTokenGetInProgress = true
-
-/**
- * Достаем refresh токен
- */
-const refreshToken: string | null = this.browserStorage.onGet(BrowserStorageVariables.refreshToken)
-const orgKey: string | null = this.browserStorage.onGet(BrowserStorageVariables.orgKey)
-
-if (refreshToken === null || orgKey === null) {
-    return throwError(new Error("Tokens not defined"))
-}
-
-    </code></pre>
-            </td>
-            <td>
-                 <pre style="font-size: 5px;"><code>
-
-
-            return this.authService.authorizeByRefresh({refreshToken, orgKey}).pipe(
-                tap((v) => {
-                    /**
-                     * Сохраняем новые refresh и access токены
-                     */
-                    this.browserStorage.onSet(BrowserStorageVariables.accessToken, v.access_token)
-
-                    /**
-                     * Говорим очереди всех запросов, что теперь можно
-                     * выполняться
-                     */
-                    this.accessToken$.next()
-                    this.isGetAccessTokenGetInProgress = false
-                }),
-                switchMap(() => {
-                    /**
-                     * Выполняем, тот самый запрос на котором
-                     * мы впервые узнали что токен сгорел
-                     */
-                    return this.getRequest(req, next)
-                })
-            )
-        })
-    )
-}
-
-private getRequest(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const accessToken: string | null = this.browserStorage.onGet(BrowserStorageVariables.accessToken)
-
-    if (accessToken === null) {
-        return next.handle(req)
-    }
-
-    return next.handle(req.clone({headers: req.headers.set("Authorization", `Bearer ${accessToken}`)}))
-}
-}
-    </code></pre>
-            </td>
-        </tr>
-    </table>
-
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2>Ротация Refresh токенов</h2>
-    <ul>
-        <li>При запросе нового access token, выдавать в т.ч. новый refresh token, делая старый устаревшим</li>
-        <li class="next">Идем дальше: объединять цепочку токенов в семейство. При попытке использовании старого refresh token - убивать всю семью.</li>
-        <li class="next">И все это больно делать если до этого мы сохраняли токен в storage, опять прийдется работать ручками</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2>Как делать запросы на сервисы?</h2>
+<section class="slide">
+    <h2><span>Как сейчас</span></h2>
     <ol>
-        <li class="next">cookie http_only: ничего делать не нужно</li>
-        <li class="next">локальное хранение: request interceptor c Authorization header</li>
-    </ol>
-    <div class="logo"></div>
-</section>
-<section class="slide ">
-    <h2><span>Как отозвать токен?</span></h2>
-    <ul>
-        <li class="next">blacklist (OWASP)</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2 class="shout shrink fs70">blacklist? Но как же stateless?</h2>
-    <div class="logo"></div>
-</section>
-
-
-<section class="slide ">
-    <h2><span>Как защитить токен от кражи? (Token Sidejacking)</span></h2>
-    <ul>
-        <li class="next">csrf token в виде отдельной http_only cookie в котором хранить user context + random SHA256</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2 class="shout shrink fs70">Хочу не изобретать велосипеды (каждый раз), а взять готовое/системное решение.</h2>
-
-    <footer class="footer">
-        <p>Велосипеды в безопасности - чреваты.</p>
-    </footer>
-    <div class="logo"></div>
-</section>
-
-
-<section class="slide ">
-    <h2><span><a href="https://docs.google.com/spreadsheets/d/1nZUd1lptmFNdmodBFQ2qfOFCjDOUeBXc2vS2sZRrX1A/edit#gid=0">Таблица готовых решений на примере react</a></span></h2>
-
-    <style type="text/css">
-        .tg  {border-collapse:collapse;border-spacing:0;}
-        .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-            overflow:hidden;padding:10px 5px;word-break:normal;}
-        .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-            font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-        .tg .tg-2b7s{text-align:right;vertical-align:bottom}
-        .tg .tg-yhzd{background-color:#E6B8AF;text-align:right;vertical-align:bottom}
-        .tg .tg-4acy{background-color:#666;color:#00E;font-weight:bold;text-align:left;text-decoration:underline;vertical-align:top}
-        .tg .tg-ry5z{background-color:#B6D7A8;text-align:right;vertical-align:bottom}
-        .tg .tg-j8j9{background-color:#D9EAD3;text-align:right;vertical-align:bottom}
-        .tg .tg-bup4{background-color:#666;border-color:inherit;color:#FFF;font-weight:bold;text-align:left;vertical-align:bottom}
-        .tg .tg-pthd{background-color:#666;color:#FFF;font-weight:bold;text-align:left;vertical-align:bottom}
-        .tg .tg-7zrl{text-align:left;vertical-align:bottom}
-        .tg .tg-rlbz{background-color:#6AA84F;text-align:right;vertical-align:bottom}
-        .tg .tg-2rmf{background-color:#FFF2CC;text-align:right;vertical-align:bottom}
-    </style>
-    <table class="tg">
-        <thead>
-        <tr>
-            <th class="tg-bup4"><span style="font-weight:bold;color:#FFF;background-color:#666">Библиотека</span></th>
-            <th class="tg-4acy"><a style="color: #fff !important;" href="https://github.com/obabichev/react-token-auth">react-token-auth</a></th>
-            <th class="tg-4acy"><a style="color: #fff !important;" href="https://www.npmjs.com/package/react-auth-kit">react-auth-kit</a></th>
-            <th class="tg-4acy"><a style="color: #fff !important;" href="https://github.com/bjerkio/oidc-react">oidc-react</a></th>
-            <th class="tg-4acy"><a style="color: #fff !important;" href="https://github.com/AxaGuilDEv/react-oidc">react-oidc</a></th>
-            <th class="tg-4acy"><a style="color: #fff !important;" href="https://github.com/Swizec/useAuth">useauth.dev</a></th>
-            <th class="tg-pthd"><span style="font-weight:bold;color:#FFF;background-color:#666">NextAuth</span></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td class="tg-7zrl">Год выхода</td>
-            <td class="tg-2b7s">2020</td>
-            <td class="tg-2b7s">2020</td>
-            <td class="tg-2b7s">2020</td>
-            <td class="tg-2b7s">2020</td>
-            <td class="tg-2b7s">2020</td>
-            <td class="tg-2b7s">2020</td>
-        </tr>
-        <tr>
-            <td class="tg-7zrl">Stars</td>
-            <td class="tg-yhzd"><span style="background-color:#E6B8AF">79</span></td>
-            <td class="tg-yhzd"><span style="background-color:#E6B8AF">192</span></td>
-            <td class="tg-j8j9"><span style="background-color:#D9EAD3">204</span></td>
-            <td class="tg-j8j9"><span style="background-color:#D9EAD3">364</span></td>
-            <td class="tg-ry5z"><span style="background-color:#B6D7A8">2600</span></td>
-            <td class="tg-rlbz"><span style="background-color:#6AA84F">11600</span></td>
-        </tr>
-        <tr>
-            <td class="tg-7zrl">Последний релиз</td>
-            <td class="tg-2rmf"><span style="background-color:#FFF2CC">2021</span></td>
-            <td class="tg-j8j9"><span style="background-color:#D9EAD3">2022</span></td>
-            <td class="tg-j8j9"><span style="background-color:#D9EAD3">2022</span></td>
-            <td class="tg-j8j9"><span style="background-color:#D9EAD3">2022</span></td>
-            <td class="tg-yhzd"><span style="background-color:#E6B8AF">2020</span></td>
-            <td class="tg-j8j9"><span style="background-color:#D9EAD3">2022</span></td>
-        </tr>
-        <tr>
-            <td class="tg-7zrl">Комментарий</td>
-            <td class="tg-7zrl">Автор рекомендует использовать библиотеку в крайнем случае и отказывается от ответственности =)</td>
-            <td class="tg-7zrl"></td>
-            <td class="tg-7zrl"></td>
-            <td class="tg-7zrl"></td>
-            <td class="tg-7zrl">Всего 2 релиза и не развивается</td>
-            <td class="tg-7zrl"></td>
-        </tr>
-        </tbody>
-    </table>
-
-    <div class="logo"></div>
-</section>
-
-
-<section class="slide ">
-    <h2 class="shout shrink fs70">Берем самое популярное решение: NextAuth</h2>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2 class="  fs70">Разбор NextAuth: Безопасность</h2>
-    <ol class="clear-list">
-        <li class="next"><i class="plus"></i> реализовано шифрование JWS / JWE / JWK</li>
-        <li class="next"><i class="plus"></i> httpOnly SameSite Secure cookie</li>
-        <li class="next"><i class="plus"></i> запрос данных расшифрованной cookie с сервера</li>
-        <li class="next"><i class="plus"></i> Синхронизация вкладок, автопроверка, поддержка активности</li>
-        <li class="next"><i class="plus"></i> CSRF</li>
-        <li class="next"><i class="plus"></i> Ротация токенов</li>
-        <li class="next"><i class="minus"></i> Нет Refresh токена => нет механизма отзыва токенов</li>
+        <li class="next">Внутреннюю базу знаний компании перевели на другой open source инструмент т.к. ей пользуются не
+            только отдел разработки
+        </li>
+        <li class="next">На многих проектах клиентов используем этот подход</li>
     </ol>
     <div class="logo"></div>
 </section>
 
-<section class="slide ">
-    <h2 class="fs70">Разбор NextAuth: Функциональность</h2>
+<section class="slide">
+    <h2 class="shout shrink fs70">Какие фишки и преимущества дает Docs-as-Code подход?</h2>
+    <div class="logo"></div>
+</section>
+
+
+<section class="slide">
+    <h2><span><img width="60" src="pictures/way.jpg" style="vertical-align: middle;"> Версионирование документации</span></h2>
+    <ul>
+        <li>Не линейное в отличие от confluence</li>
+        <li class="next">Патчи затрагивающие сразу много документов</li>
+        <li class="next">Стандартизированные комментарии версий</li>
+        <li class="next">Суммарные диффы</li>
+        <li class="next">Возможность показать сразу 2 версии (старая и новая)</li>
+    </ul>
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <h2><span><img width="60" src="pictures/comment-icon.png" style="vertical-align: middle;"> Удобные комментарии</span></h2>
+    <img width="500" style="float: right" src="pictures/gitlab-comment.png" alt="">
+    <ul>
+        <li>Их нельзя случайно удалить</li>
+        <li class="next">Они сильно функциональнее чем в confluence</li>
+        <li class="next">Можно прокомментировать каждую строчку изменения</li>
+    </ul>
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <h2 class="shout fs60"><span>Понимание кто когда и почему изменил каждую строчку</span></h2>
+    <div class="logo"></div>
+</section>
+
+
+<section class="slide">
+    <img class="cover" src="pictures/git-annotate.png" alt="">
+</section>
+
+<section class="slide">
+    <h2 class=""><span>Ревью<br>документации</span></h2>
+    <ul style="width: 300px;">
+        <li>Можно назначить нескольких ревьюеров</li>
+        <li>Автоматическая проверка качества</li>
+        <li>Комментарии и голосования</li>
+        <li>flow согласования</li>
+    </ul>
+
+    <img width="660" style="position: absolute; top: 0;right: 0;" src="pictures/gitlab-mr.png" alt="">
+</section>
+
+<section class="slide">
+    <h2><span>Контроль и повышение качества документации</span></h2>
+    <ul>
+        <li>Помимо Ревью</li>
+        <li>Множество фич статического анализа:
+        <ul>
+            <li class="next">Автоматическая проверка качества (наличия!) и стандарта комментария изменения</li>
+            <li class="next">Проверка правил форматирования</li>
+            <li class="next">Проверка орфографии</li>
+            <li class="next">Проверка ссылок (битая ссылка не пройдет)</li>
+        </ul>
+        </li>
+    </ul>
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <h2><span>Стандарт комментариев измнений</span></h2>
+    <pre>
+        <code>docs(<mark>catalog</mark>): <span class="comment">добавлено описание каталога</span></code>
+        <code>fix(<mark>catalog</mark>): <span class="comment">исправлена ошибка</span></code>
+        <code>style(<mark>catalog</mark>): <span class="comment">скорректировано оформление</span></code>
+        <code>refactor(<mark>catalog</mark>): <span class="comment">обновлено описание</span></code>
+    </pre>
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <h2><span>Интеграция с тасктрекером</span></h2>
+    <ul>
+        <li>Подгрузка коммитов с документацией в таску</li>
+        <li>достаточно лишь упомянуть ее в коммите изменения</li>
+    </ul>
+
+    <img width="600" src="pictures/jira-git.png" alt="">
+    <div class="logo"></div>
+</section>
+
+
+<section class="slide">
+    <h2 class="shout"><span>self hosted документация</span></h2>
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <img src="pictures/kb-list-catgory.png" class="cover clear" alt="">
+</section>
+
+
+<section class="slide">
+    <h2 class="shout fs70"><span>📦 Необходимость отчуждения документации</span></h2>
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <h2><span>📝 Удобный редактор</span></h2>
+    <ul>
+        <li>Ни 1 web wysiwyg редактор не сравнится по качеству работы с текстом с IDE</li>
+        <li class="next">Множественные курсоры</li>
+        <li class="next">Множественное изменение текста внутри файла</li>
+        <li class="next">Пакетные изменения файлов</li>
+        <li class="next">Поиск и замена с регулярными выражениями</li>
+        <li class="next">Локальная история изменений</li>
+        <li class="next">Куча shortcat на все случаи жизни</li>
+        <li class="next">МНОЖЕСТВО других фич</li>
+    </ul>
+    <div class="logo"></div>
+</section>
+
+
+<section class="slide">
+    <h2><span>😊 Остальные возможности IDE</span></h2>
+    <ul>
+        <li>Если вы работаете с базами данных</li>
+        <li>Git</li>
+        <li>HTTP запросы</li>
+        <li>SSH</li>
+        <li>SFTP</li>
+        <li>Docker</li>
+    </ul>
+    <div class="logo"></div>
+</section>
+
+
+<section class="slide">
+    <h2 class="shout fs60"><span>Управление знаниями с использованием процессов, знакомых инженерам</span></h2>
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <h2><span>Схемы и диаграммы как код</span></h2>
+    <img width="650" style="position: absolute;top: 140px;right: 20px;" src="pictures/sequence-example.png" alt="" />
+    <ul>
+        <li class="">plantuml</li>
+        <li class="">mermaid</li>
+        <li class="">kroki</li>
+        <li class="">другие</li>
+    </ul>
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <h2 class="shout"><span><img src="pictures/swagger.png">, <img src="pictures/storybook.png"> integration</span></h2>
+    <div class="logo"></div>
+</section>
+
+
+<section class="slide">
+    <h2 class="shout shrink fs70"><span>🤔 Как это работает <br>и какие инструменты ⚒️</span></h2>
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <h2><span><img style="vertical-align: middle;" width="60" src="pictures/git.png" alt=""> Система контроля версий</span></h2>
+    <ul>
+        <li>gitlab</li>
+        <li>github</li>
+        <li>bitbucket</li>
+        <li>other</li>
+    </ul>
+    <div class="logo"></div>
+</section>
+
+
+<section class="slide">
+    <h2><span>Язык разметки</span></h2>
+    <ul>
+        <li>markdown</li>
+        <li>rst</li>
+        <li>asciidoc</li>
+    </ul>
+    <img class="next" width="700" src="pictures/markdown.png" alt="" style="position: absolute;top: 150px; right: 70px;">
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <h2><span>⚙️ Движок визуализации</span></h2>
+    <img width="600" src="pictures/docus-screen.png" style="position: absolute;top: 150px; right: 70px;" alt="">
+    <ul>
+        <li>Docusaurus</li>
+        <li>mcdoc</li>
+        <li>gitbook</li>
+        <li>jekill</li>
+        <li>и др</li>
+    </ul>
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <h2><span>⚙️ Зачем нужен движок</span></h2>
+    <img style="margin-top: 50px; width: 900px" class="cover" src="pictures/flow-ci-cd.svg" alt="">
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <h2 class="shout fs70"><span>Facebook Docusaurus</span><br><img src="pictures/docusaurus_keytar.svg" alt=""></h2>
+
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <h2 class="shout shrink"><span>Docusaurus<br>+ React </span>
+        <br>
+        <span style="vertical-align: middle;">
+            <img src="pictures/docusaurus_keytar.svg" alt="" style="vertical-align: middle;">
+            +
+            <img width="500" src="pictures/reactjs-ar21.png" alt="" style="vertical-align: middle;">
+        </span>
+    </h2>
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <h2 class="shout shrink"><span>А нужно ли <br> это мне?</span></h2>
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <h2><span>🥲 Недостатки</span></h2>
     <ol>
-        <li>Готовые обвязки с 50+ разными провайдерами авторизации (facebook, google, discord, github, yandex, vk, azure, atlassian, OAuth, OIDC и мн другие)</li>
-        <li>Провайдер авторизации через email</li>
-        <li>Готовые удобные хуки</li>
-        <li>SSR Friendly</li>
-        <li>Провайдеры к базам данных: typeorm, prisma, sequilize и пр</li>
-        <li>Из коробки дружит с Nextjs</li>
-    </ol>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2 class="fs70">Главная ложка дегтя</h2>
-    <ol>
-        <li>Основной акцент Full Stack + Built for Serverless</li>
-        <li>Провайдер авторизации через Credentials есть, но JWT токены выпускает сам NextAuth</li>
+        <li class="next">Более высокий уровень входа (git + markdown)</li>
+        <li class="next">Скорость внесения изменения ниже</li>
+        <li class="next">Разграничение прав доступа</li>
+        <li class="next">Таблицы (markdown vs asciidoctor)</li>
     </ol>
     <div class="logo"></div>
 </section>
 
 <section class="slide">
-    <img src="pictures/nextauth-tokens-table.jpg" class="cover shrink" alt="">
-</section>
-
-<section class="slide clear">
-    <img src="pictures/next-naher.jpg" class="cover shrink" alt="">
-</section>
-
-
-<section class="slide ">
-    <h2 class="shout shrink fs70">Как это может работать</h2>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2>Авторизация с custom credential provider</h2>
-    <img width="800"  src="pictures/nextauth-auth.svg" alt="">
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2 class="shout shrink fs70">А как делать запросы к бекенду?</h2>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2>BFF proxy + trust</h2>
-    <img width="800"  src="pictures/nextauth-trust.svg" alt="">
-    <ul class="clear-list">
-        <li>* Закрываем бек от внешки</li>
-        <li><i class="minus"></i> Необходимо безоговорочное доверие сервису фронта</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2>Shared jwt encrypted key</h2>
-    <img width="600"  src="pictures/nextauth-sharedjwt.svg" alt="">
-    <ul class="clear-list">
-        <li><i class="minus"></i> Специфичный алгоритм шифрования <b>из коробки</b></li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2>Nextauth: выводы</h2>
-    <ul class="clear-list">
-        <li>Все неплохо с безопасностью</li>
-        <li>Отлично подходит для serverless, или fullstack проектов</li>
-        <li class="next">Отлично зайдет когда бекенд поставляет oAuth авторизацию или нужно быстро получить авторизацию с любым из многих провайдеров</li>
-        <li class="next">В случае со стандартной авторизацией с бекендом - подойдет, но придется повозиться. И договорится с беком о правилах игры.</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2><span><a href="https://docs.google.com/spreadsheets/d/1nZUd1lptmFNdmodBFQ2qfOFCjDOUeBXc2vS2sZRrX1A/edit#gid=0">Таблица готовых решений</a></span></h2>
-
-    <style type="text/css">
-        .tg  {border-collapse:collapse;border-spacing:0;}
-        .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-            overflow:hidden;padding:10px 5px;word-break:normal;}
-        .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-            font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-        .tg .tg-2b7s{text-align:right;vertical-align:bottom}
-        .tg .tg-yhzd{background-color:#E6B8AF;text-align:right;vertical-align:bottom}
-        .tg .tg-4acy{background-color:#666;color:#00E;font-weight:bold;text-align:left;text-decoration:underline;vertical-align:top}
-        .tg .tg-ry5z{background-color:#B6D7A8;text-align:right;vertical-align:bottom}
-        .tg .tg-j8j9{background-color:#D9EAD3;text-align:right;vertical-align:bottom}
-        .tg .tg-bup4{background-color:#666;border-color:inherit;color:#FFF;font-weight:bold;text-align:left;vertical-align:bottom}
-        .tg .tg-pthd{background-color:#666;color:#FFF;font-weight:bold;text-align:left;vertical-align:bottom}
-        .tg .tg-7zrl{text-align:left;vertical-align:bottom}
-        .tg .tg-rlbz{background-color:#6AA84F;text-align:right;vertical-align:bottom}
-        .tg .tg-2rmf{background-color:#FFF2CC;text-align:right;vertical-align:bottom}
-    </style>
-    <table class="tg">
-        <thead>
-        <tr>
-            <th class="tg-bup4"><span style="font-weight:bold;color:#FFF;background-color:#666">Библиотека</span></th>
-            <th class="tg-4acy"><a style="color: #fff !important;" href="https://github.com/obabichev/react-token-auth">react-token-auth</a></th>
-            <th class="tg-4acy"><a style="color: #fff !important;" href="https://www.npmjs.com/package/react-auth-kit">react-auth-kit</a></th>
-            <th class="tg-4acy"><a style="color: #fff !important;" href="https://github.com/bjerkio/oidc-react">oidc-react</a></th>
-            <th class="tg-4acy"><a style="color: #fff !important;" href="https://github.com/AxaGuilDEv/react-oidc">react-oidc</a></th>
-            <th class="tg-4acy"><a style="color: #fff !important;" href="https://github.com/Swizec/useAuth">useauth.dev</a></th>
-            <th class="tg-pthd"><span style="font-weight:bold;color:#FFF;background-color:#666">NextAuth</span></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td class="tg-7zrl">Год выхода</td>
-            <td class="tg-2b7s">2020</td>
-            <td class="tg-2b7s">2020</td>
-            <td class="tg-2b7s">2020</td>
-            <td class="tg-2b7s">2020</td>
-            <td class="tg-2b7s">2020</td>
-            <td class="tg-2b7s">2020</td>
-        </tr>
-        <tr>
-            <td class="tg-7zrl">Stars</td>
-            <td class="tg-yhzd"><span style="background-color:#E6B8AF">79</span></td>
-            <td class="tg-yhzd"><span style="background-color:#E6B8AF">192</span></td>
-            <td class="tg-j8j9"><span style="background-color:#D9EAD3">204</span></td>
-            <td class="tg-j8j9"><span style="background-color:#D9EAD3">364</span></td>
-            <td class="tg-ry5z"><span style="background-color:#B6D7A8">2600</span></td>
-            <td class="tg-rlbz"><span style="background-color:#6AA84F">11600</span></td>
-        </tr>
-        <tr>
-            <td class="tg-7zrl">Последний релиз</td>
-            <td class="tg-2rmf"><span style="background-color:#FFF2CC">2021</span></td>
-            <td class="tg-j8j9"><span style="background-color:#D9EAD3">2022</span></td>
-            <td class="tg-j8j9"><span style="background-color:#D9EAD3">2022</span></td>
-            <td class="tg-j8j9"><span style="background-color:#D9EAD3">2022</span></td>
-            <td class="tg-yhzd"><span style="background-color:#E6B8AF">2020</span></td>
-            <td class="tg-j8j9"><span style="background-color:#D9EAD3">2022</span></td>
-        </tr>
-        <tr>
-            <td class="tg-7zrl">Комментарий</td>
-            <td class="tg-7zrl">Автор рекомендует использовать библиотеку в крайнем случае и отказывается от ответственности =)</td>
-            <td class="tg-7zrl"></td>
-            <td class="tg-7zrl"></td>
-            <td class="tg-7zrl"></td>
-            <td class="tg-7zrl">Всего 2 релиза и не развивается</td>
-            <td class="tg-7zrl"></td>
-        </tr>
-        </tbody>
-    </table>
-
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2 class=" shrink fs70">Обзор: useAuth</h2>
-    <ul class="clear-list">
-        <li><i class="minus"></i> Не обновлялся 2 года</li>
-        <li><i class="minus"></i> Слабая проработка безопасности, токены хранятся локально</li>
-        <li><i class="minus"></i> Все равно писать интерцепторы</li>
-        <li><i class="plus"></i> Неплохая документация</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide ">
-    <h2 class=" shrink fs70">Обзор: react-auth-kit</h2>
-    <ul class="clear-list">
-        <li><i class="plus"></i> Регулярно обновляется</li>
-        <li><i class="minus"></i> Мало звезд и скачиваний</li>
-        <li><i class="minus"></i> Слабая проработка безопасности, токены хранятся локально</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-
-<section class="slide ">
-    <h2 class=" shrink fs70">Выводы общие</h2>
+    <h2><span>🧐 Когда можно подумать</span></h2>
     <ul>
-        <li>Идеальный вариант (наш опыт) - oidc аутентификация + Gatekeeper</li>
-        <li class="next">😐 На фронтенде нет хороших универсальных готовых решений закрывающих все основные требования безопасности</li>
-        <li class="next">Ближе всех к решению вопроса Nextjs, но он несет дополнительные сложности</li>
-        <li class="next">Если беретесь за самостоятельную реализацию - погрузитесь в вопрос безопаности</li>
-
+        <li class="next">Вы переходите с неспециализированных инструментов</li>
+        <li class="next">Или планируете уйти с confluence</li>
+        <li class="next">Вам нужен selfhosted / opensource</li>
+        <li class="next">Большая часть контрибьютеров и потребителей документации - технари</li>
+        <li class="next">Вам нужен высокий уровень контроля качества документации</li>
+        <li class="next">У вас сложный флоу согласования</li>
+        <li class="next">У вас публичная документация</li>
     </ul>
     <div class="logo"></div>
 </section>
 
-<section class="slide ">
-    <h2 class=" shrink fs70">Выводы по подходу</h2>
+<section class="slide">
+    <h2><span>✋ Когда не стоит</span></h2>
     <ul>
-        <li>Вариант когда JWT токены хранятся в куках - оптимален и закрывает большинство вопросов</li>
-        <li>Вариант с хранением токенов в localstorage возможен, но желательно избегать, защищать сложнее</li>
+        <li class="next">Сложные многоуровневые права доступа к каждому документу</li>
+        <li class="next">Документацией владеют больше не технические специалисты</li>
+        <li class="next">Всю вашу команду более чем устраивает confluence и вы не упираетесь в него</li>
+        <li class="next">Вы пользуетесь инструментами вроде requirement yogi</li>
     </ul>
     <div class="logo"></div>
 </section>
 
-<!--<section class="slide ">-->
-<!--    <h2 class=" shrink fs70">CheatList контроля безопасности при использовании JWT авторизации</h2>-->
-<!--    <ul>-->
-<!--        <li></li>-->
-<!--        <li>@todo</li>-->
-<!--    </ul>-->
-<!--    <div class="logo"></div>-->
-<!--</section>-->
+<section class="slide">
+    <h2><span>Если хотите попробовать:</span></h2>
+    <ul>
+        <li>Убедитесь что собрали боли</li>
+        <li class="next">Убедитесь что донесли все плюсы и минусы этого подхода и для команды плюсы перевесили</li>
+    </ul>
+    <div class="logo"></div>
+</section>
 
-<!--<section class="slide ">-->
-<!--    <h2 class="shout shrink fs70">@todo: Чек лист для frontend разрабочтика</h2>-->
-<!--    <div class="logo"></div>-->
-<!--</section>-->
+<section class="slide">
+    <h2 class=" "><span>Сравниваем с confluence</span></h2>
+    @todo
+
+    <br>
+    В т.ч. упомянуть отсутствие requirement yogi
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <h2><span>Выводы</span></h2>
+    <ul>
+        <li class="next">Docs as Code прекрасный подход дающий огромный багаж возможностей</li>
+        <li class="next">Может закрыть потребности многих технических команд и вывести их на новый уровень работы с
+            документацией
+        </li>
+        <li class="next">Но подойдет не каждой команде</li>
+        <li class="next">Он отличное заходит в oursource для крупного бизнеса</li>
+    </ul>
+    <div class="logo"></div>
+</section>
+
 
 <section class="slide ">
     <h2 class="">Полезные ссылки</h2>
     <ul>
-        <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.html">OWASP JWT Cheat Sheet</a></li>
-        <li><a href="https://github.com/ticarpi/jwt_tool/wiki">{JWT}.{Attack}.Playbook</a></li>
-        <li><a href="https://datatracker.ietf.org/doc/rfc8725/">JSON Web Token Best Current Practices</a></li>
-        <li><a href="https://next-auth.js.org/">NextAuth</a></li>
-        <li><a href="https://docs.google.com/spreadsheets/d/1nZUd1lptmFNdmodBFQ2qfOFCjDOUeBXc2vS2sZRrX1A/edit#gid=0">Таблица готовых решений</a></li>
+        <li><a href="https://doka.guide/tools/markdown/">markdown</a></li>
+        <li><a href="https://docusaurus.io/">docusaurus</a></li>
+        <li><a href="https://www.jetbrains.com/ru-ru/webstorm/">webstorm</a></li>
     </ul>
     <div class="logo"></div>
 </section>
 
-<section class="slide ">
-    <h2 class=" shrink fs70">Cheatlist</h2>
-    <p>@todo</p>
-    <div class="logo"></div>
-</section>
 
 <section class="slide">
     <h2 class="">Спасибо! 🙃</h2>
@@ -956,10 +494,9 @@ private getRequest(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEve
     Telegram: <a href="https://t.me/northleshiy">@northleshiy</a>
 
 
-    <p> <img class="place right" src="pictures/qr-code.svg" style="max-width: 300px; margin-right: 300px" alt=""></p>
+    <p><img class="place right" src="pictures/qr-code.svg" style="max-width: 300px; margin-right: 300px" alt=""></p>
 
 </section>
-
 
 
 <footer class="badge">
