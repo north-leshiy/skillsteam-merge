@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Проблемы аутентификации в современных frontend приложениях</title>
+    <title>Управление знаниями в outsource компании и построение системы грейдов</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
@@ -48,12 +48,12 @@
 <body class="shower list">
 
 <header class="caption">
-    <h1>Документация как код</h1>
+    <h1>Управление знаниями в outsource компании и построение системы грейдов</h1>
     <p>Иван Поддубный, CTO Webpractik</p>
 </header>
 
 <section class="slide clear">
-    <h2 class="shout shrink fs80">Документация как код</h2>
+    <h2 class="shout shrink fs80">Управление знаниями в outsource компании и построение системы грейдов</h2>
 
     <div class="logo"></div>
 </section>
@@ -81,13 +81,40 @@
 
 
 <section class="slide">
-    <h2><span>План доклада</span></h2>
+    <h2><span>Задачи по управлению знаниями в заказной разработке</span></h2>
     <ol>
-        <li class="next">Что такое docs as code</li>
-        <li class="next">Как мы к этому пришли</li>
-        <li class="next">Основные плюсы и минусы подхода</li>
-        <li class="next">Сравниваем с confluence</li>
-        <li class="next">Выводы</li>
+        <li class="next">Управление знаниями проектов</li>
+        <li class="next">Управление знаниями компании</li>
+        <li class="next">Обучение сотрудников</li>
+    </ol>
+    <div class="logo"></div>
+</section>
+
+
+<section class="slide">
+    <h2 class="shout shrink fs70">Управление знаниями проектов</h2>
+    <div class="logo"></div>
+</section>
+
+
+<section class="slide">
+    <h2><span>Специфика outsource разработки</span></h2>
+    <ol>
+        <li class="next">Есть ряд проектов</li>
+        <li class="next">У проектов есть жизненный цикл в компании</li>
+        <li class="next">Состояние документации на момент прихода проекта</li>
+        <li class="next">Как следствие высокий процент реверс инжиринга документации</li>
+        <li class="next">Формат ведения документации</li>
+    </ol>
+
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <h2><span>Выше требования к СКОРОСТИ онбординга</span></h2>
+    <ol>
+        <li class="next">В первую очередь это онбординг разработчиков (ссылка на доклад)</li>
+        <li class="next">Бывает когда в проект нужно быстро погрузить сразу несколько команд</li>
     </ol>
 
     <div class="logo"></div>
@@ -95,28 +122,36 @@
 
 
 <section class="slide">
-    <h2><span>В чем вы пишете документацию?</span></h2>
+    <h2><span>Стандарты</span></h2>
     <ol>
-        <li class="next">confluence</li>
-        <li class="next">google docs / word</li>
-        <li class="next">notion</li>
+        <li class="next">Стандартизация используемых инструментов</li>
+        <li class="next">Проект "карточка проекта" концепт</li>
+        <li class="next">Проект "карточка проекта" v1</li>
+        <li class="next">Проект "карточка проекта" v2</li>
+    </ol>
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <h2 class="shout fs70"><span>📦 Необходимость отчуждения документации</span></h2>
+    <div class="logo"></div>
+</section>
+
+<section class="slide">
+    <h2><span>Путь</span></h2>
+    <ol>
+        <li class="next">Были простые вики (2 вида) с wysiwyg редактором</li>
+        <li class="next">Техлиды и разработчики системно не любили в них ходить</li>
+        <li class="next">"техн. документация должна лежать как можно ближе к коду"</li>
         <li class="next">docs as code</li>
-        <li class="next">other</li>
+        <li class="next">Начинали с простого markdown в репозитории проектов</li>
+        <li class="next">Со временем доросли до статических генераторов (mkdocs)</li>
+        <li class="next">Переехали на facebook docusaurus</li>
+        <li class="next">В некоторых проектах начали выносить в отдельные репозитории</li>
+        <li class="next">Построили внутреннюю документацию всей компании на docusaurus</li>
     </ol>
-
     <div class="logo"></div>
-</section>
-
-
-<section class="slide ">
-    <h2 class="shout shrink fs70">Кто слышал <br>о <b>DOCS-AS-CODE</b> подходе?</h2>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2 class="shout shrink fs70">А кто пробовал?</h2>
-    <div class="logo"></div>
-</section>
+</section
 
 <section class="slide">
     <h2>Docs as Code</h2>
@@ -133,145 +168,6 @@
     <div class="logo"></div>
 </section>
 
-
-<section class="slide">
-    <h2 class="shout"><span>Как мы к этому пришли</span></h2>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2 class=""><span>Особенности работы с крупным аутсорсом</span></h2>
-    <ul>
-        <li class="next">Крупные проекты мигрируют между крупными игроками (тендеры)</li>
-        <li class="next">Уровень отношения к документации разный:
-            <ul>
-                <li class="next">Документации нет</li>
-                <li class="next">Документация передается вордовским файлом</li>
-                <li class="next">В лучшем случае бекап конфлюенса</li>
-            </ul>
-        </li>
-        <li class="next">Даже если есть - почти всегда отрывочная, неполная</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2><span> Путь</span></h2>
-    <ol>
-        <li class="next">Были простые вики (2 вида) с wysiwyg редактором</li>
-        <li class="next">Техлиды и разработчики системно не любили в них ходить</li>
-        <li class="next">"техн. документация должна лежать как можно ближе к коду"</li>
-        <li class="next">Начинали с простого markdown в репозитории проектов</li>
-        <li class="next">Со временем доросли до статических генераторов (mkdocs)</li>
-        <li class="next">Переехали на facebook docusaurus</li>
-        <li class="next">В некоторых проектах начали выносить в отдельные репозитории</li>
-        <li class="next">Построили внутреннюю документацию всей компании на docusaurus</li>
-    </ol>
-    <div class="logo"></div>
-</section>
-
-
-<section class="slide">
-    <h2><span>Как сейчас</span></h2>
-    <ol>
-        <li class="next">Внутреннюю базу знаний компании перевели на другой open source инструмент т.к. ей пользуются не
-            только отдел разработки
-        </li>
-        <li class="next">На многих проектах клиентов используем этот подход</li>
-    </ol>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2 class="shout shrink fs70">Какие фишки и преимущества дает Docs-as-Code подход?</h2>
-    <div class="logo"></div>
-</section>
-
-
-<section class="slide">
-    <h2><span><img width="60" src="pictures/way.jpg" style="vertical-align: middle;"> Версионирование документации</span></h2>
-    <ul>
-        <li>Не линейное в отличие от confluence</li>
-        <li class="next">Патчи затрагивающие сразу много документов</li>
-        <li class="next">Стандартизированные комментарии версий</li>
-        <li class="next">Суммарные диффы</li>
-        <li class="next">Возможность показать сразу 2 версии (старая и новая)</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2><span><img width="60" src="pictures/comment-icon.png" style="vertical-align: middle;"> Удобные комментарии</span></h2>
-    <img width="500" style="float: right" src="pictures/gitlab-comment.png" alt="">
-    <ul>
-        <li>Их нельзя случайно удалить</li>
-        <li class="next">Они сильно функциональнее чем в confluence</li>
-        <li class="next">Можно прокомментировать каждую строчку изменения</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2 class="shout fs60"><span>Понимание кто когда и почему изменил каждую строчку</span></h2>
-    <div class="logo"></div>
-</section>
-
-
-<section class="slide">
-    <img class="cover" src="pictures/git-annotate.png" alt="">
-</section>
-
-<section class="slide">
-    <h2 class=""><span>Ревью<br>документации</span></h2>
-    <ul style="width: 300px;">
-        <li>Можно назначить нескольких ревьюеров</li>
-        <li>Автоматическая проверка качества</li>
-        <li>Комментарии и голосования</li>
-        <li>flow согласования</li>
-    </ul>
-
-    <img width="660" style="position: absolute; top: 0;right: 0;" src="pictures/gitlab-mr.png" alt="">
-</section>
-
-<section class="slide">
-    <h2><span>Контроль и повышение качества документации</span></h2>
-    <ul>
-        <li>Помимо Ревью</li>
-        <li>Множество фич статического анализа:
-        <ul>
-            <li class="next">Автоматическая проверка качества (наличия!) и стандарта комментария изменения</li>
-            <li class="next">Проверка правил форматирования</li>
-            <li class="next">Проверка орфографии</li>
-            <li class="next">Проверка ссылок (битая ссылка не пройдет)</li>
-        </ul>
-        </li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2><span>Стандарт комментариев измнений</span></h2>
-    <pre>
-        <code>docs(<mark>catalog</mark>): <span class="comment">добавлено описание каталога</span></code>
-        <code>fix(<mark>catalog</mark>): <span class="comment">исправлена ошибка</span></code>
-        <code>style(<mark>catalog</mark>): <span class="comment">скорректировано оформление</span></code>
-        <code>refactor(<mark>catalog</mark>): <span class="comment">обновлено описание</span></code>
-    </pre>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2><span>Интеграция с тасктрекером</span></h2>
-    <ul>
-        <li>Подгрузка коммитов с документацией в таску</li>
-        <li>достаточно лишь упомянуть ее в коммите изменения</li>
-    </ul>
-
-    <img width="600" src="pictures/jira-git.png" alt="">
-    <div class="logo"></div>
-</section>
-
-
 <section class="slide">
     <h2 class="shout"><span>self hosted документация</span></h2>
     <div class="logo"></div>
@@ -282,208 +178,13 @@
 </section>
 
 
-<section class="slide">
-    <h2 class="shout fs70"><span>📦 Необходимость отчуждения документации</span></h2>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2><span>📝 Удобный редактор</span></h2>
-    <ul>
-        <li>Ни 1 web wysiwyg редактор не сравнится по качеству работы с текстом с IDE</li>
-        <li class="next">Множественные курсоры</li>
-        <li class="next">Множественное изменение текста внутри файла</li>
-        <li class="next">Пакетные изменения файлов</li>
-        <li class="next">Поиск и замена с регулярными выражениями</li>
-        <li class="next">Локальная история изменений</li>
-        <li class="next">Куча shortcat на все случаи жизни</li>
-        <li class="next">МНОЖЕСТВО других фич</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-
-<section class="slide">
-    <h2><span>😊 Остальные возможности IDE</span></h2>
-    <ul>
-        <li>Если вы работаете с базами данных</li>
-        <li>Git</li>
-        <li>HTTP запросы</li>
-        <li>SSH</li>
-        <li>SFTP</li>
-        <li>Docker</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-
-<section class="slide">
-    <h2 class="shout fs60"><span>Управление знаниями с использованием процессов, знакомых инженерам</span></h2>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2><span>Схемы и диаграммы как код</span></h2>
-    <img width="650" style="position: absolute;top: 140px;right: 20px;" src="pictures/sequence-example.png" alt="" />
-    <ul>
-        <li class="">plantuml</li>
-        <li class="">mermaid</li>
-        <li class="">kroki</li>
-        <li class="">другие</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2 class="shout"><span><img src="pictures/swagger.png">, <img src="pictures/storybook.png"> integration</span></h2>
-    <div class="logo"></div>
-</section>
-
-
-<section class="slide">
-    <h2 class="shout shrink fs70"><span>🤔 Как это работает <br>и какие инструменты ⚒️</span></h2>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2><span><img style="vertical-align: middle;" width="60" src="pictures/git.png" alt=""> Система контроля версий</span></h2>
-    <ul>
-        <li>gitlab</li>
-        <li>github</li>
-        <li>bitbucket</li>
-        <li>other</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-
-<section class="slide">
-    <h2><span>Язык разметки</span></h2>
-    <ul>
-        <li>markdown</li>
-        <li>rst</li>
-        <li>asciidoc</li>
-    </ul>
-    <img class="next" width="700" src="pictures/markdown.png" alt="" style="position: absolute;top: 150px; right: 70px;">
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2><span>⚙️ Движок визуализации</span></h2>
-    <img width="600" src="pictures/docus-screen.png" style="position: absolute;top: 150px; right: 70px;" alt="">
-    <ul>
-        <li>Docusaurus</li>
-        <li>mcdoc</li>
-        <li>gitbook</li>
-        <li>jekill</li>
-        <li>и др</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2><span>⚙️ Зачем нужен движок</span></h2>
-    <img style="margin-top: 50px; width: 900px" class="cover" src="pictures/flow-ci-cd.svg" alt="">
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2 class="shout fs70"><span>Facebook Docusaurus</span><br><img src="pictures/docusaurus_keytar.svg" alt=""></h2>
-
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2 class="shout shrink"><span>Docusaurus<br>+ React </span>
-        <br>
-        <span style="vertical-align: middle;">
-            <img src="pictures/docusaurus_keytar.svg" alt="" style="vertical-align: middle;">
-            +
-            <img width="500" src="pictures/reactjs-ar21.png" alt="" style="vertical-align: middle;">
-        </span>
-    </h2>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2 class="shout shrink"><span>А нужно ли <br> это мне?</span></h2>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2><span>🥲 Недостатки</span></h2>
-    <ol>
-        <li class="next">Более высокий уровень входа (git + markdown)</li>
-        <li class="next">Скорость внесения изменения ниже</li>
-        <li class="next">Разграничение прав доступа</li>
-        <li class="next">Таблицы (markdown vs asciidoctor)</li>
-    </ol>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2><span>🧐 Когда можно подумать</span></h2>
-    <ul>
-        <li class="next">Вы переходите с неспециализированных инструментов</li>
-        <li class="next">Или планируете уйти с confluence</li>
-        <li class="next">Вам нужен selfhosted / opensource</li>
-        <li class="next">Большая часть контрибьютеров и потребителей документации - технари</li>
-        <li class="next">Вам нужен высокий уровень контроля качества документации</li>
-        <li class="next">У вас сложный флоу согласования</li>
-        <li class="next">У вас публичная документация</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2><span>✋ Когда не стоит</span></h2>
-    <ul>
-        <li class="next">Сложные многоуровневые права доступа к каждому документу</li>
-        <li class="next">Документацией владеют больше не технические специалисты</li>
-        <li class="next">Всю вашу команду более чем устраивает confluence и вы не упираетесь в него</li>
-        <li class="next">Вы пользуетесь инструментами вроде requirement yogi</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2><span>Если хотите попробовать:</span></h2>
-    <ul>
-        <li>Убедитесь что собрали боли</li>
-        <li class="next">Убедитесь что донесли все плюсы и минусы этого подхода и для команды плюсы перевесили</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2 class=" "><span>Сравниваем с confluence</span></h2>
-    @todo
-
-    <br>
-    В т.ч. упомянуть отсутствие requirement yogi
-    <div class="logo"></div>
-</section>
-
-<section class="slide">
-    <h2><span>Выводы</span></h2>
-    <ul>
-        <li class="next">Docs as Code прекрасный подход дающий огромный багаж возможностей</li>
-        <li class="next">Может закрыть потребности многих технических команд и вывести их на новый уровень работы с
-            документацией
-        </li>
-        <li class="next">Но подойдет не каждой команде</li>
-        <li class="next">Он отличное заходит в oursource для крупного бизнеса</li>
-    </ul>
-    <div class="logo"></div>
-</section>
-
-
 <section class="slide ">
     <h2 class="">Полезные ссылки</h2>
     <ul>
-        <li><a href="https://doka.guide/tools/markdown/">markdown</a></li>
+        <li><a href="https://doka.guide/tools/markdown/">outline</a></li>
         <li><a href="https://docusaurus.io/">docusaurus</a></li>
-        <li><a href="https://www.jetbrains.com/ru-ru/webstorm/">webstorm</a></li>
+        <li><a href="">доклад про docs as code</a></li>
+        <li><a href="">доклад про быстрый онбординг разработчиков</a></li>
     </ul>
     <div class="logo"></div>
 </section>
