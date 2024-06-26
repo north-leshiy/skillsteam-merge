@@ -1,3 +1,7 @@
+* {
+	font-family: "Montserrat", "proxima nova", sans-serif !important;
+}
+
 .shower {
 	--slide-ratio: calc(16 / 9);
 	/*font-family: "Proxima Nova Cn Rg", sans-serif !important;*/
@@ -13,7 +17,7 @@
 	--color-yellow: #fafaa2;
 	--color-grey: #585a5e;
 	--color-lightgrey: #C0C1C2;
-	--color-orange: #FF7002;
+	--color-orange: #000;
 	--color-darkgray: #222;
 	--color-fill: rgba(88, 90, 94, 0.1);
 	--color-line: rgba(88, 90, 94, 0.5);
@@ -78,7 +82,7 @@
 	bottom: -15px;
 	top: auto;
 	text-align: left;
-	font-family: "proxima nova", sans-serif !important;
+	font-family: "Montserrat", "proxima nova", sans-serif !important;
 	font-size: 18px;
 }
 .slide.clear::before {
@@ -93,6 +97,9 @@
 	bottom: 0;
 	background: url(./pictures/knowledgebase-conf-logo.svg) no-repeat;
 	background-size: contain;
+}
+.clear-logo .logo {
+	display: none;
 }
 .clear .logo {
 	display: none;
