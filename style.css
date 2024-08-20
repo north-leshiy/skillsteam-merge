@@ -79,8 +79,8 @@
 	color: #C0C1C2;
 	right: 0;
 	left: auto;
-	bottom: -15px;
-	top: auto;
+	top: 15px;
+	bottom: auto;
 	text-align: left;
 	font-family: "Montserrat", "proxima nova", sans-serif !important;
 	font-size: 18px;
@@ -89,13 +89,29 @@
 	display: none;
 }
 
+.slide.light {
+	background: url("./pictures/boost-white.png") no-repeat;
+	background-size: contain;
+}
+
+.slide.dark {
+	background: url("./pictures/boost-dark.png") no-repeat;
+	background-size: contain;
+}
+
+.slide.dark h2 {
+	color: #fff
+}
+
 .logo {
+	display: none;
 	position: absolute;
-	width: 80px;
-	height: 75px;
-	left: 50px;
-	bottom: 0;
-	background: url(./pictures/knowledgebase-conf-logo.svg) no-repeat;
+	width: 30px;
+	height: 310px;
+	right: 20px;
+	bottom: 30px;
+	top: auto;
+	background: url("./pictures/boost-logo.png") no-repeat;
 	background-size: contain;
 }
 .clear-logo .logo {
