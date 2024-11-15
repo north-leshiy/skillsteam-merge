@@ -90,12 +90,12 @@
 }
 
 .slide.light {
-	background: url("./pictures/boost-white.png") no-repeat;
+	/*background: url("./pictures/boost-white.png") no-repeat;*/
 	background-size: contain;
 }
 
 .slide.dark {
-	background: url("./pictures/boost-dark.png") no-repeat;
+	background: url("./pictures/dark-bg.svg") no-repeat;
 	background-size: contain;
 }
 
@@ -114,7 +114,7 @@
 	background: url("./pictures/boost-logo.png") no-repeat;
 	background-size: contain;
 }
-.clear-logo .logo {
+.logo {
 	display: none;
 }
 .clear .logo {
