@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Строим систему грейдов в агентстве</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+    <link rel="stylesheet" href="font/stylesheet.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+
+
+        .fs80 {
+            font-size: 80px !important;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .green {
+            color: green;
+        }
+
+        .plus {
+            content: "";
+            display: inline-block;
+            margin-bottom: -2px;
+            width: 20px;
+            height: 20px;
+            background: url(pictures/plus1.png);
+            background-size: 100% 100%;
+        }
+
+        .minus {
+            content: "";
+            display: inline-block;
+            margin-bottom: -2px;
+            width: 20px;
+            height: 20px;
+            background: url(pictures/minus1.png);
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+<body class="shower list">
+
+<header class="caption">
+    <h1>Как запустить систему грейдов, чтобы удержать таланты и увеличить прибыль</h1>
+    <p>Иван Поддубный, CTO Webpractik</p>
+</header>
+
+<section class="slide clear">
+<!--    <div style="vertical-align: middle;">-->
+<!--        <img src="pictures/wp-logo-mainpage.svg" class="wp-logo" alt="" height="40"-->
+<!--             style="margin-right: 40px; vertical-align: middle; position: relative; top: -25px;">-->
+<!--        <img src="pictures/knowledgebase-conf-logo.svg" class="main-page__logo" alt="" height="60">-->
+<!--    </div>-->
+
+<!--    <h2 class="fs70" style="margin-top: 20px; font-size: 48px; color: #fff;">Строим систему грейдов <br> в агентстве</h2>-->
+
+<!--    <div class="author" style="font-size: 36px; color: #fff; font-weight: bold;">Иван Поддубный</div>-->
+<!--    <div class="company" style="font-size: 30px; color: #fff;">CTO Webpractik</div>-->
+
+    <img style="width: 100%;" class="cover"   src="pictures/main.svg" alt="">
+</section>
+
+<section class="slide light">
+    <h2>Кто я 👨‍💻</h2>
+    <ol>
+        <li>15+ лет в IT (web). Прошел путь fullstack, teamlead</li>
+        <li>Пишу на PHP, Typescript, Nodejs (Nest) и React</li>
+        <li>Влюблен в Linux, OpenSource.</li>
+        <li>Работаю CTO в Вебпрактик (150+)</li>
+        <li>Член программного комитета TechLeadConf и Podlodka PHP Crew</li>
+        <li>Организатор Ростовского PHP сообщества (~500 человек)</li>
+    </ol>
+
+</section>
+
+<section class="slide clear">
+    <h2 style="font-size: 35px;">Вебпрактик &mdash; веб-интегратор для корпораций</h2>
+    <img  class="cover" src="pictures/clients.svg" alt="">
+</section>
+
+
+<section class="slide ">
+    <h2 class="shout fs70">Система грейдов</h2>
+
+</section>
+
+<section class="slide ">
+    <h2 class="shout fs70">У кого есть система грейдов?</h2>
+
+</section>
+
+<section class="slide light">
+    <h2>Кадровые проблемы</h2>
+    <ul>
+        <li class="next">Люди &mdash; самое важное</li>
+<!--        <li class="next">Конкуренция регионов с Москвой за кадры</li>-->
+        <li class="next">Конкуренция с крупнейшими корпорациями за кадры</li>
+    </ul>
+
+</section>
+
+<section class="slide light">
+    <h2>Кадровый рост в Вебпрактик</h2>
+    <ul>
+        <li class="next">У нас рост по людям 30% в год</li>
+        <li class="next">Важно обеспечить качество этих людей, <br>поскольку сложные и ответственные проекты</li>
+    </ul>
+
+</section>
+
+<section class="slide light">
+    <h2 class="shout fs60">Senior vs Middle vs Junior</h2>
+
+
+</section>
+
+<section class="slide light">
+    <h2 class="shout fs60">Senior?</h2>
+
+
+    <!-- Сеньеры штучный товар, на рынке найти сложно, конкуренция за них с крупнейшими российскими и зарубежными корпорациями -->
+</section>
+
+<section class="slide light">
+    <h2 class="shout fs70">Middle & Junior</h2>
+
+</section>
+
+<section class="slide light">
+    <h2 class="shout fs70">Кто растит джунов?</h2>
+
+</section>
+
+<!--<section class="slide">-->
+<!--    <h2 class="shout fs50">Middle&nbsp;выращенный&nbsp;vs&nbsp;с&nbsp;рынка</h2>-->
+<!--</section>-->
+
+<!--<section class="slide">-->
+<!--    <h2>Middle выращенный vs с рынка</h2>-->
+<!--    <table class="striped" style="border: 1px solid black">-->
+<!--        <thead>-->
+<!--            <tr style="border: 1px solid black">-->
+<!--                <th>Выращенный</th>-->
+<!--                <th>С рынка</th>-->
+<!--            </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--            <tr style="border: 1px solid black">-->
+<!--                <td>Глубоко в процессах </td>-->
+<!--                <td>Не всегда подойдет к процессам</td>-->
+<!--            </tr >-->
+<!--            <tr class="next" style="border: 1px solid black">-->
+<!--                <td>Мы уверены в знаниях</td>-->
+<!--                <td>Могут быть существенные пробелы не проверенные на собеседовании</td>-->
+<!--            </tr>-->
+<!--            <tr class="next" style="border: 1px solid black">-->
+<!--                <td>В структуре роста компании</td>-->
+<!--                <td>Может получиться оверпрайснутым</td>-->
+<!--            </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+<!--</section>-->
+
+<section class="slide light">
+    <h2 class="">Проблемы роста 📈</h2>
+    <ul>
+        <li>Джунов нужно быстро растить</li>
+        <li>Мидлов нужно адаптировать</li>
+        <li>Конфликты уровня "почему он получает столько"</li>
+    </ul>
+
+</section>
+
+<section class="slide light">
+    <img style="margin: 100px 0 0 30px" width="300" src="pictures/coordinates.png" alt="координаты">
+    <h2 class="shout" style="text-align: left; margin-left: 400px; font-size: 56px;">Нужна единая<br>система координат<br>в компании</h2>
+
+</section>
+
+<section class="slide dark">
+    <h2 class="shout fs70">Система грейдов</h2>
+
+</section>
+
+
+<section class="slide ">
+    <h2 class="shout fs70">У кого на табличках?</h2>
+
+</section>
+
+<section class="slide light">
+    <h2 class="shout fs70">🎦 Демонстрация</h2>
+
+</section>
+
+<!-- @todo вариант с иконками  -->
+<section class="slide" style="background-color: #eff2f4">
+    <img src="pictures/screen-person.png" class="cover" alt=""
+        style="width: 900px"
+    >
+
+</section>
+
+<section class="slide clear" style="background-color: #eff2f4">
+    <img src="pictures/screen-skills.png" class="cover" alt=""
+         style="width: 880px"
+    >
+
+</section>
+
+
+<section class="slide" style="background-color: #eff2f4">
+    <img src="pictures/screen-skill-cart.png" class="cover" alt="">
+
+</section>
+
+<section class="slide" style="background-color: #eff2f4">
+    <img src="pictures/screen-skill-cart-2.png" class="cover" alt="">
+
+</section>
+
+<section class="slide" style="background-color: #eff2f4">
+    <img src="pictures/screen-kanban.png" class="cover" alt="">
+</section>
+
+<section class="slide" style="background-color: #eff2f4">
+    <img src="pictures/learning-progress.png" class="cover" alt="">
+
+</section>
+
+<section class="slide" style="background-color: #eff2f4">
+    <img src="pictures/screen-matrix.png" class="cover" alt="">
+
+</section>
+
+
+<section class="slide" style="background-color: #eff2f4">
+    <img src="pictures/screen-front-users.png" class="cover" alt="">
+</section>
+
+
+<section class="slide light">
+    <h2>Какие задачи решают <br>грейды в компании:</h2>
+    <ol>
+        <li>Скорость и качество роста сотрудников</li>
+        <li class="next">Прозрачность и отсутствие потолка</li>
+        <li class="next">Уменьшение предвзятости</li>
+        <li class="next">Уменьшение конфликта уровней ЗП</li>
+        <li class="next">Увеличение срока жизни сотрудника в компании</li>
+    </ol>
+
+</section>
+
+<section class="slide light">
+    <h2>Из чего состоит грейдовая система</h2>
+    <ol>
+        <li>Грейды (требования, скилы к каждому грейду)</li>
+        <li class="next"><b>Процессы!</b></li>
+    </ol>
+
+</section>
+
+<section class="slide dark">
+    <h2 class="shout fs70">#1 <br>Как мы строили<br>
+                            грейды</h2>
+
+</section>
+
+<section class="slide light">
+    <h2 class="shout fs70">На чем <br> основать грейды</h2>
+
+</section>
+
+<section class="slide clear" style="background: #000 !important;">
+    <h2 style="text-align: center;">Компетенции или Performance</h2>
+    <img src="pictures/tablets.jpg" class="cover" alt="">
+
+</section>
+
+<section class="slide light">
+    <h2 class="shout fs70">Performance?</h2>
+
+</section>
+
+<section class="slide ">
+    <figure>
+        <blockquote>
+            <p>Измерить производительность разработчиков? Невозможно. Слишком много факторов, мешающих друг другу, сетевых эффектов, дисперсии, эффектов наблюдения и циклов обратной связи, чтобы получить разумные ответы на такие вопросы, как «Во сколько раз больше прибыли создала Джоан, чем Гарри?» или «Насколько лучше (или хуже) дела у Гарри в этом квартале, чем в прошлом?»</p>
+        </blockquote>
+
+        <figcaption>Кент Бек</figcaption>
+    </figure>
+</section>
+
+<section class="slide light">
+    <h2>Performance?</h2>
+    <ol>
+        <li class="">Можете ли вы определить Performance сеньора на собеседовании?
+            <br><b class="next">На собеседовании мы определяем набор компетенций</b>
+        </li>
+        <li class="next">
+            Есть ли непредвзятые метрики которые достаточно хорошо вычленят работу одного разработчика из команды?
+        </li>
+    </ol>
+
+</section>
+
+<section class="slide clear">
+    <img src="pictures/gudhart.png" class="cover" alt="">
+
+</section>
+
+<section class="slide light">
+    Чтобы мерить производительность <br>
+    - не стоит привязывать performance к грейдам.
+    <br>
+
+    <img src="pictures/habr-gudhart.svg" width="300" alt="">
+
+</section>
+
+
+<section class="slide light">
+    <h2>SkillBased подход</h2>
+    <ol>
+        <li>Сложную задачу может решить человек обладающий необходимыми <b>компетенциями</b></li>
+        <li>Различаем junior / middle / senior по уровню компетенций <br>(+ к матчу с рынком)</li>
+        <li>Каждую компетенцию можем проверить изолированно</li>
+    </ol>
+
+</section>
+
+<section class="slide clear-logo ">
+    <h2>Харды vs Софты</h2>
+
+    <ul>
+        <li class="next">Софты сложно прозрачно измерять в моменте</li>
+        <li class="next">На начальном этапе можно вынести за скобки грейдов</li>
+        <li class="next">Лучше всего софты замерить с помощью 360 review</li>
+    </ul>
+
+
+</section>
+
+<section class="slide light">
+    <h2 class="shout fs70">Собрать требования к знаниям</h2>
+
+</section>
+
+<section class="slide light">
+    <h2>Кто такой для вас Middle?</h2>
+    <ol>
+        <li class="next">Выполняет средние задачи вашей компании</li>
+        <li class="next">«Рыночный middle»</li>
+    </ol>
+
+    <blockquote class="next">
+        Является middle разработчиком/специалистом пойдя в любую компанию
+    </blockquote>
+
+
+</section>
+
+<section class="slide clear-logo" style="font-size: 23px">
+    <h2>Как составляли грейды</h2>
+    <ol>
+        <li>Источники
+            <ul>
+                <li>Анализ рынка (вакансии)</li>
+                <li>Собственная экспертиза</li>
+                <li>Публичные роадмепы (roadmap.sh)</li>
+            </ul>
+        </li>
+        <li class="next">Делаем матрицу - что должен знать каждый специалист на каждом грейде</li>
+        <li class="next">Добавляем свою специфику</li>
+        <li class="next">Можно сделать акцент на слабых местах</li>
+        <li class="next">Пишем задачи. Делали постепенно.</li>
+    </ol>
+
+</section>
+
+<section class="slide light">
+    <h2>Как мы подходили к функционалу</h2>
+    <ul>
+        <li>Начинали с таблички google docs</li>
+        <li class="next">(<i>Некоторые коллеги делают на основе таск трекера!</i>)</li>
+    </ul>
+
+</section>
+
+<section class="slide " style="background-color: #eff2f4">
+    <img src="pictures/screen-kanban.png" class="cover" alt="">
+</section>
+
+<section class="slide light">
+    <h2>Как мы подходили к функционалу</h2>
+    <ul>
+        <li>Начинали с таблички google docs</li>
+        <li>(<i>Некоторые коллеги делают на основе таск трекера!</i>)</li>
+        <li>Начали упираться по гибкости</li>
+    </ul>
+
+</section>
+
+<section class="slide light">
+    <h2>Собрали MVP на коленках</h2>
+    <ul>
+        <li class="next">Первый прототип был на jquery и bitrix24</li>
+        <li class="next">Не хватало статистики</li>
+        <li class="next">Нелинейные траектории</li>
+        <li class="next">SSO</li>
+        <li class="next">А может попробуем представим грейды вот так? Или так?</li>
+        <li class="next">Долгий путь)</li>
+    </ul>
+
+</section>
+
+<section class="slide light">
+    <h2>Линейность 🔀</h2>
+    <img class="" width="500" src="pictures/linear-grade.drawio.svg" alt="">
+
+</section>
+
+<section class="slide light">
+    <h2>Линейность 🔀</h2>
+    <ul>
+        <li class="next">Линейная система проще</li>
+        <li class="next">При наличии нескольких веток развития можно перейти к бальной системе</li>
+    </ul>
+
+</section>
+
+<section class="slide dark">
+    <h2 class="shout fs80">#2 <br>Процессы</h2>
+
+</section>
+
+<section class="slide light">
+    <h2>Процессы</h2>
+    <ol>
+        <li class="">Прием скиллов</li>
+        <li class="">Аттестация новоприбывших</li>
+        <li class="">Менторы, воронка</li>
+        <li class="">Внедрение</li>
+        <li class="">Обновления</li>
+        <li class="">Работа с возражениями</li>
+    </ol>
+
+</section>
+
+
+<section class="slide light">
+    <h2>Прием скиллов</h2>
+    <ol>
+        <li class="">Домашки</li>
+        <li class="">Полугодовые/годовые аттестации</li>
+    </ol>
+
+</section>
+
+<section class="slide light" style="font-size: 22px">
+    <h2>Домашки</h2>
+    <ol>
+        <li class="next">Нельзя стать крутым ИТ специалистом не занимаясь системным самообразованием</li>
+        <li class="next">Готовность к домашкам позволяет отсеять большую часть нерелевантных специалистов</li>
+        <li class="next">Домашки не должны быть слишком объемными, максимум несколько часов</li>
+        <li class="next">Автоматы</li>
+        <li class="next">Домашки - абстрактные задачи, чтобы не было мысли что мы эксплуатируем людей в личное время
+        </li>
+    </ol>
+
+</section>
+
+
+<section class="slide light">
+    <h2>Аттестация новоприбывших 📋</h2>
+    <ol>
+        <li class="next">На собеседовании мы верхнеуровнево смотрим где пробелы</li>
+        <li class="next">Сможет ли достичь за 2-3 месяца запрошенного уровня денег в грейдах</li>
+        <li class="next">Выделяем системно время на аттестацию специалиста</li>
+    </ol>
+
+</section>
+
+<section class="slide light">
+    <h2>Менторы</h2>
+    <ol>
+        <li class="next">Человек должен этого хотеть, нельзя заставлять</li>
+        <li class="next">Должна быть денежная мотивация, хотя бы номинальная</li>
+        <li class="next">Выделение времени зависит от вашей модели учета времени специалистов</li>
+        <li class="next">Пирамида менторства</li>
+    </ol>
+
+</section>
+
+<section class="slide light">
+    <h2>Отслеживать узкие места в воронке <img src="pictures/voronka.png" height="30" alt=""></h2>
+    <ol>
+        <li>Ментор может быть загружен, а у джуна скопилось 2-3+ домашки</li>
+        <li class="next">Если этих домашек не хватало до повышения - повышаем авансом. То что компания не может
+                         проверить знания - проблема компании.
+        </li>
+        <li class="next">Перенаправить на другого ментора</li>
+        <li class="next">Проверить руководителю (заодно чек качества сдачи конкретного сотрудника)</li>
+    </ol>
+
+</section>
+
+
+<section class="slide" style="background-color: #eff2f4">
+    <img src="https://w6p.ru/YTJiMTg.png" class="cover" alt="воронка">
+
+</section>
+
+
+<section class="slide light">
+    <h2>«Хакнуть систему»&nbsp;<img src="pictures/hacker.png" height="40" alt=""></h2>
+    <ol>
+        <li class="next">Реально сложно т.к. наличие знаний проверяет ментор.</li>
+        <li class="next">С ментора спросят если его падаван не знает базу, это его репутация</li>
+        <li class="next">Объем пересдач мы мониторим, и если человек плохо готовится к сдачам пытаясь сдавать наскоком - будет
+                         разговор
+        </li>
+    </ol>
+
+</section>
+
+<section class="slide light">
+    <h2 class="shout fs50">А если я сдам <br>и забуду?</h2>
+
+</section>
+
+<section class="slide light">
+    <h2>Системное обновление 🔄</h2>
+    <ol>
+        <li>Рынок развивается</li>
+        <li class="next">Компания и ее векторы меняются</li>
+        <li class="next">Можно закрывать какие то факапные места грейдом</li>
+        <li class="next">Нужно как минимум раз в год рефакторить</li>
+        <li class="next">... ИНФЛЯЦИЯ СКИЛЛОВ 🎃</li>
+    </ol>
+
+</section>
+
+<section class="slide light">
+    <h2>Как рождается скил 💪</h2>
+    <ol>
+        <li>Идея поступает как сверху так и снизу</li>
+        <li class="next">Выделяется ответственный на скил (обычно кто-то старший)</li>
+        <li class="next">После ревью запускается в работу</li>
+    </ol>
+
+</section>
+
+<section class="slide light">
+    <h2>Грейды + Внешние курсы</h2>
+    <ul>
+        <li>Хороших курсов мало</li>
+        <li>У курса должны быть домашки, а не просто лекции</li>
+        <li>Проверить качество этих домашек и матчинг с вашими</li>
+    </ul>
+
+</section>
+
+<section class="slide light">
+    <h2>Внедрение</h2>
+    <ol>
+        <li>Согласование модели с коллегами, получение обратной связи</li>
+        <li>Модель развития - это контракт с сотрудником</li>
+        <li class="next">Пошаговая аттестация сотрудников</li>
+    </ol>
+
+</section>
+
+<section class="slide light">
+    <h2 class="shout fs60">Инициатива не обязательно<br>должна идти сверху</h2>
+
+</section>
+
+<section class="slide clear-logo" style="font-size: 23px;">
+    <h2>Выводы:</h2>
+    <ol>
+        <li>Наличие грейдов дает много плюшек компании и сотрудникам
+            <ul>
+                <li>Скорость и качество роста сотрудников</li>
+                <li>Прозрачность и отсутствие потолка</li>
+                <li>Уменьшение предвзятости, конфликта уровней ЗП</li>
+                <li>Увеличение срока жизни сотрудника в компании</li>
+            </ul>
+        </li>
+        <li class="next">Создание стартовой модели стоить нескольких дней ментальных усилий</li>
+        <li class="next">Начинать можно без всякого функционала, просто на базе google docs или taskTracker</li>
+        <li class="next">Инициатива не обязательно должна идти сверху</li>
+    </ol>
+
+
+</section>
+
+
+<section class="slide clear">
+    <h2>Если </h2>
+    <ul>
+        <li>Вы выросли с табличек</li>
+        <li>Вы хотите сразу готовый инструмент</li>
+        <li>Вам нужны готовые матрицы</li>
+        <li>Вам нужен консалтинг в плане грейдов</li>
+    </ul>
+</section>
+
+<section class="slide clear">
+    <img src="./pictures/st-2.svg" class="cover" alt="">
+</section>
+
+<section class="slide clear">
+    <h2>SkillSteam: готовые матрицы</h2>
+    <img src="pictures/qr-frontendskills.svg" style="float:right; width: 300px;" alt="">
+    <ul>
+        <li>Frontend <b>ready</b></li>
+        <li>PHP <b>ready</b></li>
+        <li>QA <i style="color: gray">сентябрь</i></li>
+        <li>Analyst <i style="color: gray">сентябрь</i></li>
+        <li>Devops <i style="color: gray">сентябрь</i></li>
+    </ul>
+
+    <p>Любая матрица легко <br>настраивается и адаптируется.</p>
+</section>
+
+<section class="slide dark" style=" color: #fff">
+    <img src="pictures/qr-telegram.svg" style="width: 200px; margin-top: 65px; float: left;" alt="">
+    <h2 class="shout" style="color: #fff; top: 150px; font-size: 70px">Спасибо!</h2>
+    <p style="margin: 200px 0 0 292px;">
+        Поддубный Иван<br>
+        CTO Вебпрактик<br>
+        Telegram: @northleshiy
+    </p>
+
+</section>
+
+
+<div class="progress"></div>
+
+<script src="shower/shower.js"></script>
+</body>
+</html>
